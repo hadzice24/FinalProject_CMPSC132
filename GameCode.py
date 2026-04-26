@@ -36,7 +36,7 @@ def play_game():
             print("Too low!")
         else:
             print("Correct! Congratulations!")
-            print("You guessed it in {attempts} attempts.")
+            print(f"You guessed it in {attempts} attempts.")
             guessed_correctly = True
 
 
@@ -49,11 +49,11 @@ def choose_difficulty():
 
     choice = input("Enter Choice: ")
 
-    if choice == 1 or choice == "Easy" or choice == "easy":
+    if choice == "1" or choice == "Easy" or choice == "easy":
         return 1, 50
-    elif choice == 2 or choice == "Medium" or choice == "medium":
+    elif choice == "2" or choice == "Medium" or choice == "medium":
         return 1, 100
-    elif choice == 3 or choice == "Hard" or choice == "hard":
+    elif choice == "3" or choice == "Hard" or choice == "hard":
         return 1, 200
     else:
         print("Invalid Choice. Medium difficulty defaulted")
@@ -67,8 +67,8 @@ def main():
     while play_again:
         play_game()
 
-        response = input("Do you want to play again? (Yes/No): ")
-        if response == "Yes":
+        response = input("Do you want to play again? (Yes/No): ").lower()
+        if response == "yes" or response == "y":
             play_again = True
         else:
             play_again = False
