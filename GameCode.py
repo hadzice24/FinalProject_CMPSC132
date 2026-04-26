@@ -1,17 +1,17 @@
 import random
 
 # Prompt user until a valid integer is entered.
-def get_valid_guess():
+def get_valid_guess(min_val, max_val):
     valid = False
     
     while not valid:
-        guess = input("Enter your guess (1 - 100): ")
+        guess = input(f"Enter your guess ({min_val} - {max_val}): ")
         try:
             guess = int(guess)
-            if 1 <= guess <= 100:
+            if min_val <= guess <= max_val:
                 valid = True
             else:
-                print("Please enter a number between 1 and 100.")
+                print(f"Please enter a number between {min_val} and {max_val}.")
         except ValueError:
             print("Invalid input. Please enter a number.")
 
@@ -19,14 +19,15 @@ def get_valid_guess():
 
 # Game Logic
 def play_game():
-    number = random.randint(1, 100)
+    print("Welcome to the Number Guessing Game!")
+    min_val, max_val = choose_difficulty()
+    number = random.randint(min_val, max_val)
     attempts = 0
     guessed_correctly = False
 
-    print()
 
     while not guessed_correctly:
-        guess = get_valid_guess()
+        guess = get_valid_guess(min_val, max_val)
         attempts += 1
 
         if guess > number:
