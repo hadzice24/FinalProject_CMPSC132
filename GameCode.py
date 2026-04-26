@@ -40,21 +40,6 @@ def play_game():
             guessed_correctly = True
 
 
-# Control Replay
-def main():
-    play_again = True
-
-    while play_again:
-        play_game()
-
-        response = input("Do you want to play again? (Yes/No): ")
-        if response == "Yes":
-            play_again = True
-        else:
-            play_again = False
-            print("Thanks for playing!")
-
-
 # Difficulty Levels
 def choose_difficulty():
     print("Choose difficulty:")
@@ -73,6 +58,21 @@ def choose_difficulty():
     else:
         print("Invalid Choice. Medium difficulty defaulted")
         return 1, 100
+    
+
+# Control Replay
+def main():
+    play_again = True
+
+    while play_again:
+        play_game()
+
+        response = input("Do you want to play again? (Yes/No): ")
+        if response == "Yes":
+            play_again = True
+        else:
+            play_again = False
+            print("Thanks for playing!")
 
 
 if __name__ == "__main__":
