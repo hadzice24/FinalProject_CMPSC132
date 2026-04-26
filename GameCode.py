@@ -1,5 +1,26 @@
 import random
 
+# Prompt user to choose a difficulty level
+def choose_difficulty():
+    print("Choose difficulty:")
+    print("1. Easy (1-50)")
+    print("2. Medium (1-100)")
+    print("3. Hard (1-200)")
+
+    choice = input("Enter Choice: ")
+
+    # Choice logic
+    if choice == "1" or choice == "Easy" or choice == "easy":
+        return 1, 50
+    elif choice == "2" or choice == "Medium" or choice == "medium":
+        return 1, 100
+    elif choice == "3" or choice == "Hard" or choice == "hard":
+        return 1, 200
+    else:
+        print("Invalid Choice. Medium difficulty defaulted")
+        return 1, 100
+    
+
 # Prompt user until a valid integer is entered.
 def get_valid_guess(min_val, max_val):
     valid = False
@@ -38,26 +59,6 @@ def play_game():
             print("Correct! Congratulations!")
             print(f"You guessed it in {attempts} attempts.")
             guessed_correctly = True
-
-
-# Difficulty Levels
-def choose_difficulty():
-    print("Choose difficulty:")
-    print("1. Easy (1-50)")
-    print("2. Medium (1-100)")
-    print("3. Hard (1-200)")
-
-    choice = input("Enter Choice: ")
-
-    if choice == "1" or choice == "Easy" or choice == "easy":
-        return 1, 50
-    elif choice == "2" or choice == "Medium" or choice == "medium":
-        return 1, 100
-    elif choice == "3" or choice == "Hard" or choice == "hard":
-        return 1, 200
-    else:
-        print("Invalid Choice. Medium difficulty defaulted")
-        return 1, 100
     
 
 # Control Replay
