@@ -37,3 +37,22 @@ def play_game():
             print("Correct! Congratulations!")
             print("You guessed it in {attempts} attempts.")
             guessed_correctly = True
+
+
+# Control Replay
+def main():
+    play_again = True
+
+    while play_again:
+        play_game()
+
+        response = input("Do you want to play again? (Yes/No): ")
+        if response == "Yes":
+            play_again = True
+        else:
+            play_again = False
+            print("Thanks for playing!")
+
+
+if __name__ == "__main__":
+    main()
